@@ -17,17 +17,17 @@ public class MyController {
   @RequestMapping("/AddPerson")
   public String addPerson() {
 
-    Address address = new Address();
-    address.city = "London";
-    address.street = "Baker Street";
+    //CREATE ADDRESS
+    Address       address              = new Address();
+                  address.city         = "London";
+                  address.street       = "Baker Street";
+                  address.streetNumber = 5;
 
-
-    //CREATE PERSON ENTITY
-    PersonEntity personEntity = new PersonEntity();
-                 personEntity.id   = 1L;
-                 personEntity.name = "John";
-                 personEntity.age  = 20;
-                 personEntity.address = address;
+    //CREATE PERSON
+    PersonEntity  personEntity         = new PersonEntity();
+                  personEntity.name    = "John";
+                  personEntity.age     = 20;
+                  personEntity.address = address;
 
     //STORE PERSON ENTITY
     personRepository.save(personEntity);
